@@ -8,6 +8,7 @@
 
 
 	1.api_packge：excel数据驱动设计模式
+	    Python3 + unittest + request + excel ddt + HTMLTestRunner + 邮件通知
 		--cases：用例excel编写、测试用例集合；
 		--common：基类base request二次封装、excel读取封装、token获取封装、HTML报告模块、SQL操作封装；
 		--report：run运行所以用例集合、邮箱发生错误用例时告知至个人邮箱
@@ -20,6 +21,7 @@
 	
 		
 	2.web_packge：PageObject设计模式
+        Python3 + unittest + selenium + HTMLTestRunner + 邮件通知
 		--cases：测试用例集合；
 		--common：基类base selenium二次封装、HTML报告模块、SQL操作封装、config封装；
 		--pages: PageObject分模块封装页面元素；
@@ -34,6 +36,7 @@
 
 
 	1.api_packge: 类似PageObject设计模式
+        Python3 + pytest + request + allure
 		--api: api封装，类似PageObject设计模式
 		--cases：pytest_conftest、测试用例集合；
 		--common：基类base request二次封装、config配置url；
@@ -44,6 +47,7 @@
 		
 		
 	2.web_packge：PageObject设计模式
+        Python3 + pytest + selenium + allure
 		--cases：测试用例集合；
 		--common：基类base selenium二次封装、HTML报告模块、SQL操作封装、config封装；
 		--pages: PageObject分模块封装页面元素；
@@ -60,6 +64,8 @@
     怎么不用yaml写用例? 答：喜欢用什么就用什么，yaml有助于以后集成到平台开发；
     
 	Appium怎么没有demo? 答：有的，没有开源但也是各种封装，appium也很好用，不妨试试aritest；
+	
+	结合 jenkins 进行持续集成、分布式执行UI自动化脚本你需要了解更多 docker selenium；
 	
 	
 关于我：在这里你将会了解到更多：https://www.cnblogs.com/gsxl/
