@@ -1,8 +1,13 @@
-﻿========= 广深小龙-制作自动化测试框架之demo，欢迎各路大佬指点~ ==========
-demo分为两个框架：①pytest  ②unittest
+﻿﻿========= 广深小龙-制作自动化测试框架之demo，欢迎各路大佬指点~ ==========
+
+
+demo分为两个框架： ①pytest   ②unittest
+
 
 简介：
 1、unittest框架：unittest_demo
+
+
 	1.api_packge：excel数据驱动设计模式
 		--cases：用例excel编写、测试用例集合；
 		--common：基类base request二次封装、excel读取封装、token获取封装、HTML报告模块、SQL操作封装；
@@ -27,6 +32,8 @@ demo分为两个框架：①pytest  ②unittest
 
 
 2、pytest框架：pytest_demo：
+
+
 	1.api_packge: 类似PageObject设计模式
 		--api: api封装，类似PageObject设计模式
 		--cases：pytest_conftest、测试用例集合；
