@@ -3,6 +3,8 @@
 
 简介：demo分为两个框架：①pytest     ②unittest
 
+主要分享：web selenium 自动化测试框架  与  api request 自动化测试框架
+
 
 1、unittest框架：unittest_demo
 
