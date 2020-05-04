@@ -248,15 +248,3 @@ class Base():
     def js_tail(self):
         ''' 页面滚动条滑动至底部 '''
         self.driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
-
-if __name__ == '__main__':
-    import time
-    driver = webdriver.Chrome()
-    b = Base(driver)
-    driver.get('https://www.cnblogs.com/gsxl/')
-    driver.maximize_window()
-    loc_1 = ('xpath', '//*[@id="sidebar_toptags"]/div/ul/li[2]/a')
-    b.click(loc_1)
-    time.sleep(1)
-    b.js_tail()
-

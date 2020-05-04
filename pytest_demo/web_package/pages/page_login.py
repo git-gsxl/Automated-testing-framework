@@ -52,15 +52,5 @@ class Login(Base):
         else:
             return False
 
-if __name__ == '__main__':
-    from unittest_demo.web_package.common.config import url, is_driver
-    url = url()
-    driver = is_driver()
-    driver.get(url['host']+url['login_url'])
-    b = Login(driver)
-    print(b.register())
-    time.sleep(2)
-
-
 
 

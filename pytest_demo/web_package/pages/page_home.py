@@ -52,16 +52,3 @@ class Home(Base):
             else:return True
         except: return True
 
-
-if __name__ == '__main__':
-    from unittest_demo.web_package.common.config import url, is_driver
-    from unittest_demo.web_package.pages.page_login import Login
-    url = url()
-    driver = is_driver()
-    driver.get(url['host']+url['login_url'])
-    Login(driver).login()
-    b = Home(driver)
-    b.add_projects('hrun')
-    print(b.exp())
-    # driver.quit()
-
