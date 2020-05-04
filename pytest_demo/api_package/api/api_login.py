@@ -3,10 +3,8 @@ from pytest_demo.api_package.common.config import host
 
 class Login_api(Base_api):
 
-
     def register(self, user="gsxl11",email="gsxl11@qq.com",pwd="gsxl11", re_pwd="gsxl11"):
         ''' 注册 '''
-
         url = host()+'/api/register/'
         body = {"account": user,
                 "email": email,
@@ -16,7 +14,7 @@ class Login_api(Base_api):
         return res
 
     def login(self, user='admin', pwd='123456'):
-        ''' d登录 '''
+        ''' 登录 '''
         url = host()+'/api/login/'
         body = 'account=%s&password=%s' % (user, pwd)
         res = self.post(url, body)
