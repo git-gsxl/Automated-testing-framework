@@ -7,7 +7,7 @@ class Login_api(Base_api):
     def register(self, user="gsxl11",email="gsxl11@qq.com",pwd="gsxl11", re_pwd="gsxl11"):
         ''' 注册 '''
 
-        url = host()+'/pages/register/'
+        url = host()+'/api/register/'
         body = {"account": user,
                 "email": email,
                 "password": pwd,
@@ -17,7 +17,7 @@ class Login_api(Base_api):
 
     def login(self, user='admin', pwd='123456'):
         ''' d登录 '''
-        url = host()+'/pages/login/'
+        url = host()+'/api/login/'
         body = 'account=%s&password=%s' % (user, pwd)
         res = self.post(url, body)
         return res

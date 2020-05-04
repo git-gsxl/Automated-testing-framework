@@ -10,16 +10,16 @@ class Test_login():
         sql = "delete from UserInfo where username='gsxl11';"
         send_sql(sql)
         res = Login_api().register()
-        assert '恭喜您，账号已成功注册' == res
+        assert '恭喜您，账号已成功注册' == res.text
 
     def test_register1(self):
         res = Login_api().register()
-        assert '该用户名已被注册，请更换用户名' == res
+        assert '该用户名已被注册，请更换用户名' == res.text
 
     def test_login(self):
         res = Login_api().login()
-        assert '欢迎您：admin' in res
+        assert '欢迎您：admin' in res.text
 
     def test_login1(self):
         res = Login_api().login(user='')
-        assert '请输入用户名' in res
+        assert '请输入用户名' in res.text

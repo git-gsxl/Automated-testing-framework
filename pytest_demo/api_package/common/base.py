@@ -6,11 +6,10 @@ class Base_api():
     '''
     1.默认只需要传url和参数
     2.微信的accesss_token可在headers加入
+    3.request 的参数可以直接用**kwargs传入
     '''
-    def __init__(self):
-        self.s = requests.session()
-
-    def post(self, url, body=None, headers={}, method='post', token='', cookies=None):
+    s = requests.session()
+    def post(self, url, body=None, headers={}, method='post', token='', **kwargs):
         if type(body) == str:
             headers['Content-Type'] = 'application/x-www-form-urlencoded'
             my_type = 'params'
@@ -23,26 +22,27 @@ class Base_api():
         if len(token) > 1:
             body = body.replace('$token', token)       # 替换token
 
-        print("请求方式：%s, 请求url:%s" % (method, url))
-        print("请求头参数为：%s" % headers)
-        print("请求类型为：%s ,body参数为：%s" % (my_type, body))
-
         res = self.s.request(method=method,
                               url=url,
                               params=body,
                               headers=headers,
                               data=body,
-                             cookies=cookies
+                              **kwargs
                              )
-        print('响应信息为：', res.content.decode("utf-8"))
-        return res.content.decode("utf-8")
+        print("请求方式：%s, 请求url:%s" % (method, url))
+        print("请求头参数为：%s" % headers)
+        print("请求类型为：%s ,body参数为：%s" % (my_type, body))
+        print('decode响应信息为：', res.content.decode("utf-8"))
+        return res
 
-    def get(self, url, body=None, headers={}, method='get', cookies=None):
+    def get(self, url, body=None, headers={}, method='get', **kwargs):
         res = self.s.request(method=method,
                              url=url,
                              params=body,
                              headers=headers,
                              data=body,
-                             cookies=cookies
+                             **kwargs
                              )
-        return res.content.decode("utf-8")
+        print("请求方式：%s, 请求url:%s" % (method, url))
+        print('decode响应信息为：', res.content.decode('utf-8'))
+        return res

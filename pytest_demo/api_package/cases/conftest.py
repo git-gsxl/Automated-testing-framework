@@ -8,4 +8,10 @@ def get_token():
     token = re.findall('"datas":"(.+?)",', res)
     return token[0]
 
+# 需要cookies传入下一个接口
+@pytest.fixture(scope="session")
+def get_cookie():
+    cookie = Login_api().login().cookies
+    return cookie
+
 
