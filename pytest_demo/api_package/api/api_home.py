@@ -7,7 +7,7 @@ cookies = {'Cookie': 'jenkins-timestamper-offset=-28800000; sessionid=dvx7vgzne4
 class Home_api(Base_api):
 
     def add_project(self, name='hrun1', _name='广深小龙', token=''):
-        url = host()+'/pages/add_project/'
+        url = host()+'/api/add_project/'
         body = {"project_name": name,
                 "responsible_name": _name,
                 "test_user": "K、J、L",
@@ -20,7 +20,7 @@ class Home_api(Base_api):
         return res
 
     def select_list(self):
-        url = host()+'/pages/project_list/1/'
+        url = host()+'/api/project_list/1/'
         res = self.get(url, cookies=cookies)
         try:
             r = re.findall("invalid\('(.+?)'\)", res)
@@ -30,7 +30,7 @@ class Home_api(Base_api):
 
 
     def del_project(self,id, token=''):
-        url = host()+'/pages/project_list/1/'
+        url = host()+'/api/project_list/1/'
         body = {"id": id, "mode": "del"}
         res = self.post(url, body, token=token, cookies=cookies)
         return res
